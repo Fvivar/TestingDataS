@@ -2,7 +2,13 @@ package DataStructures;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-
+/**
+ * ArrayList Implementation
+ * Works almost as a LinkedList
+ * @author Fernando Gramajo
+ *
+ * @param <E>
+ */
 public class ArrayList<E> implements List<E>, Iterable<E> {
 	
 	/**
@@ -40,11 +46,16 @@ public class ArrayList<E> implements List<E>, Iterable<E> {
 	public static final int CAPACITY = 16;
 	private E[] data;
 	private int size = 0;
-
+/**
+ * Constructor for ArrayList
+ */
 	public ArrayList() {
 		this(CAPACITY);
 	}
-
+/**
+ * Constructor for ArrayList with size param.
+ * @param capacity Size of the ArrayList
+ */
 	public ArrayList(int capacity) {
 		data = (E[]) new Object[capacity];
 	}
@@ -61,14 +72,18 @@ public class ArrayList<E> implements List<E>, Iterable<E> {
 		checkIndex(i, size);
 		return data[i];
 	}
-
+/**
+ * Sets a given value on a given index
+ */
 	public E set(int i, E e) {
 		checkIndex(i, size);
 		E temp = data[i];
 		data[i] = e;
 		return temp;
 	}
-
+/**
+ * Adds an item on given index
+ */
 	public void add(int i, E e) {
 		checkIndex(i, size + 1);
 		if (size == data.length)
@@ -79,7 +94,11 @@ public class ArrayList<E> implements List<E>, Iterable<E> {
 		size++;
 
 	}
-
+/**
+ * Removes item on given index
+ * Works as a linkedList Removal
+ * it "resizes" after removing an item
+ */
 	public E remove(int i) throws IndexOutOfBoundsException {
 		checkIndex(i, size);
 		E temp = data[i];
