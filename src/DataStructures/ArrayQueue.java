@@ -5,11 +5,16 @@ public class ArrayQueue<E> implements Queue<E> {
 	private E[] data;
 	private int f = 0; //Index for front element
 	private int sz = 0; //Curent qty
-	
+	/*
+	 * Constructor for ArrayQueue
+	 */
 	public ArrayQueue( ) {
 		this(CAPACITY);
 	}
-
+/**
+ * Constructor for ArrayQueue with size param
+ * @param capacity Size of ArrayQueue
+ */
 	public ArrayQueue(int capacity) {
 		data = (E[ ]) new Object[capacity];
 	}
@@ -23,6 +28,10 @@ public class ArrayQueue<E> implements Queue<E> {
 	}
 	
 	public void enqueue(E e) {
+		if(sz==data.length)
+		{
+			resize(2*data.length);
+		}
 		int avail = (f + sz) % data.length;
 		data[avail] = e;
 		sz++;
@@ -40,5 +49,15 @@ public class ArrayQueue<E> implements Queue<E> {
 		f = (f + 1) % data.length;
 		sz--;
 		return answer;
+	}
+	/**
+	 * Internal method to increase array capacity
+	 * @param capacity
+	 */
+	protected void resize(int capacity) {
+		E[] temp = (E[]) new Object[capacity];
+		for (int k=0; k < sz; k++)
+			temp[k] = data[k];
+		data = temp;
 	}
 }
