@@ -54,7 +54,7 @@ public class ArrayList<E> implements List<E>, Iterable<E> {
 	}
 /**
  * Constructor for ArrayList with size param.
- * @param capacity Size of the ArrayList
+ * @param capacity Size of ArrayList
  */
 	public ArrayList(int capacity) {
 		data = (E[]) new Object[capacity];
@@ -88,8 +88,7 @@ public class ArrayList<E> implements List<E>, Iterable<E> {
 		checkIndex(i, size + 1);
 		if (size == data.length)
 			resize(2 * data.length);
-		for (int k = size - 1; k >= i; k--)
-			data[k + 1] = data[k];
+		
 		data[i] = e; 
 		size++;
 

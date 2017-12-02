@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 import Lists.Animal;
 
-public class TestArrayList {
+public class TestArrayStack {
 
 	public static void main(String[] args) {
-ArrayList<Animal> AL = new ArrayList<>(2);
+ArrayStack<Animal> AS = new ArrayStack<>(2);
 		
 		Scanner scan = new Scanner(System.in);
 		String type;
@@ -28,8 +28,8 @@ ArrayList<Animal> AL = new ArrayList<>(2);
 			skinColor=scan.next();
 
 			Animal newAnimal = new Animal(type,age,weigth,skinColor);
-			//Adding first animal to ArrayList
-			AL.add(0,newAnimal);
+			//Adding first animal to ArrayStack
+			AS.push(newAnimal);
 			
 		//Adding data for second animal
 			System.out.println("Type the animal type");
@@ -45,8 +45,8 @@ ArrayList<Animal> AL = new ArrayList<>(2);
 			skinColor=scan.next();
 
 		    Animal newAnimal2 = new Animal(type,age,weigth,skinColor);
-			//Adding second animal to ArrayList
-			AL.add(1,newAnimal2);
+			//Adding second animal to ArrayStack
+			AS.push(newAnimal2);
 			
 		//Adding data for third animal	
 			System.out.println("Type the animal type");
@@ -62,18 +62,14 @@ ArrayList<Animal> AL = new ArrayList<>(2);
 			skinColor=scan.next();
 
 			Animal newAnimal3 = new Animal(type,age,weigth,skinColor);
-			//Adding third animal to ArrayList
-			AL.add(2,newAnimal3);
+			//Adding third animal to ArrayStack
+			AS.push(newAnimal3);
 		
-		//Changing values at certain index
-			AL.set(0, newAnimal3);
-			AL.set(1, newAnimal2);
-			AL.set(2, newAnimal);
 			
-		//Removing "Animal" type items from end of ArrayList
-		System.out.println(AL.remove(0));
-		System.out.println(AL.remove(1));
-		System.out.println(AL.remove(0));
+		//Removing "Animal" type items from ArrayStack
+		System.out.println(AS.pop());
+		System.out.println(AS.pop());
+		System.out.println(AS.pop());
 	}
 
 }

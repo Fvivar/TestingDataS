@@ -22,7 +22,12 @@ public class ArrayStack<E> implements Stack<E> {
 	}
 
 	public void push(E e) {
+		if(t==(data.length-1))
+		{
+			resize(2*data.length);
+		}
 		data[++t] = e;
+		
 	}
 
 	public E top() {
@@ -36,6 +41,16 @@ public class ArrayStack<E> implements Stack<E> {
 		data[t] = null;
 		t--;
 		return response;
+	}
+	/**
+	 * Internal method to increase array capacity
+	 * @param capacity
+	 */
+	protected void resize(int capacity) {
+		E[] temp = (E[]) new Object[capacity];
+		for (int k=0; k <= t; k++)
+			temp[k] = data[k];
+		data = temp;
 	}
 	
 	
