@@ -1,14 +1,25 @@
 package DataStructures;
-
+/**
+ * Implementation of Dynamic Stack
+ * 
+ * @author Fernando Gramajo
+ *
+ * @param <E>
+ */
 public class ArrayStack<E> implements Stack<E> {
 	public static final int CAPACITY=1000;
 	private E[] data;
 	private int t=-1;
-	
+	/**
+	 * Constructor for ArrayStack
+	 */
 	public ArrayStack() {
 		this(CAPACITY);
 	}
-
+/**
+ * Constructor for ArrayStack with size param
+ * @param capacity Size of ArrayStack
+ */
 	public ArrayStack(int capacity) {
 		data = (E[]) new Object[capacity];
 	}
