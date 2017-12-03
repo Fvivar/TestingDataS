@@ -1,13 +1,5 @@
 package DataStructures;
 
-/**
- * Simple stack ADT representation
- * 
- * @author Víctor Orozco based on code from:
- ∗ @author Michael T. Goodrich
- ∗ @author Roberto Tamassia
- ∗ @author Michael H. Goldwasser
- */
 
 public interface Queue<E> {
 

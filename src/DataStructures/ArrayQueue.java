@@ -1,5 +1,12 @@
 package DataStructures;
 
+/**
+ * ArrayQueue Implementation
+ * Works almost as a Queue
+ * @author Fernando Gramajo
+ *
+ * @param <E>
+ */
 public class ArrayQueue<E> implements Queue<E> {
 	public static final int CAPACITY=1000;
 	private E[] data;

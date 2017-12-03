@@ -4,16 +4,17 @@ import DataStructures.Queue;
 import DataStructures.Stack;
 
 /**
- * Implementacion de lista enlazada utilizando generics
- * @author tuxtor
+ * Implementation of LinkedList
+ * It also can be used a Stack or Queue (both dynamic)
+ * @author Fernando Gramajo
  *
  * @param <E>
  */
 public class LinkedList<E> implements Stack<E>, Queue<E>{
 
 	/**
-	 * Inner class
-	 * @author tuxtor
+	 * Inner Node class
+	 * @author Fernando Gramajo
 	 *
 	 * @param <E>
 	 */
@@ -79,31 +80,42 @@ public class LinkedList<E> implements Stack<E>, Queue<E>{
 		if(size == 0) tail = null;
 		return response;
 	}
-
+/**
+ * Inserts item to Stack
+ */
 	@Override
 	public void push(E e) {
 		this.addFirst(e);
 		
 	}
-
+/**
+ * Gets item on top of the Stack 
+ * without removing it
+ */
 	@Override
 	public E top() {
 		
 		return this.first();
 	}
-
+/**
+ * Removes item on top of he Stack (LIFO)
+ */
 	@Override
 	public E pop() {
 		
 		return this.removeFirst();
 	}
-
+/**
+ * Inserts item to Queue
+ */
 	@Override
 	public void enqueue(E e) {
 		this.addLast(e);
 		
 	}
-
+/**
+ * Removes item of Queue (FIFO)
+ */
 	@Override
 	public E dequeue() {
 		return removeFirst();

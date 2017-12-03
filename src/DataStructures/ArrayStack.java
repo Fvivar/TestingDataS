@@ -1,7 +1,7 @@
 package DataStructures;
 /**
- * Implementation of Dynamic Stack
- * 
+ * ArrayStack Implementation
+ * Works almost as a Stack
  * @author Fernando Gramajo
  *
  * @param <E>
