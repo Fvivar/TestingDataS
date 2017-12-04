@@ -1,6 +1,9 @@
 package Lists;
 
+import java.util.Iterator;
 import java.util.Scanner;
+
+import Lists.Node;
 /**
  * Adding main class for testing positional list
  * @author Fernando Gramajo
@@ -66,7 +69,12 @@ public class TestListas {
 			Animal newAnimal3 = new Animal(type,age,weigth,skinColor);
 			//Adding third animal to positionalList in the previous position of last position
 			lnkdL.addBefore(lnkdL.last(),newAnimal3);
-		
+		Iterator<Animal> iterator = lnkdL.iterator();
+		while (iterator.hasNext()) {
+			Animal animal = (Animal) iterator.next();
+			System.out.println(animal);
+			
+		}
 		//Removing "Animal" type items from positionalList
 		System.out.println(lnkdL.remove(lnkdL.last()));
 		System.out.println(lnkdL.remove(lnkdL.first()));

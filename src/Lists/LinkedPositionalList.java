@@ -48,7 +48,7 @@ public class LinkedPositionalList<E> implements PositionalList<E>, Iterable<E> {
 	/**
 	 * Implementacion de un iterador basado en Position
 	 */
-	private class PositionIterator implements Iterator<Position<E>> {
+	public class PositionIterator implements Iterator<Position<E>> {
 		private Position<E> cursor = first(); // posicion del siguiente elemento
 		private Position<E> recent = null; // posicion del ultimo elemento reportado
 		public boolean hasNext() { return (cursor != null); }
@@ -81,7 +81,7 @@ public class LinkedPositionalList<E> implements PositionalList<E>, Iterable<E> {
 	/**
 	 * "Adaptador" del iterador de positions hacia iterador de elementos
 	 */
-	private class ElementIterator implements Iterator<E> {
+	public class ElementIterator implements Iterator<E> {
 		Iterator<Position<E>> posIterator = new PositionIterator( );
 		public boolean hasNext( ) { return posIterator.hasNext( ); }
 		public E next( ) { return posIterator.next( ).getElement( ); } // return element!
@@ -118,7 +118,7 @@ public class LinkedPositionalList<E> implements PositionalList<E>, Iterable<E> {
 	/**
 	 * "Empaca" un nodo como posicion a menos que sea header o trailer
 	 */
-	private Position<E> position(Node<E> node) {
+	public Position<E> position(Node<E> node) {
 		if (node == header || node == trailer)
 			return null; // do not expose user to the sentinels
 		return node;
@@ -195,5 +195,14 @@ public class LinkedPositionalList<E> implements PositionalList<E>, Iterable<E> {
 		node.setPrev(null);
 		return answer;
 	}
-
+	
+	public Iterable<E> getAnimals(int i)
+	{
+		while (iterator().hasNext()) 
+		{
+			String re=iterator().next().toString();
+			System.out.println(re);
+		}
+		return null;
+	}
 }
